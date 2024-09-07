@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movercamara : MonoBehaviour
+public class w : MonoBehaviour
 {
-    public Transform player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,6 @@ public class movercamara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        
     }
 }
