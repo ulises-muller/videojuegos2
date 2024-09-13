@@ -12,13 +12,14 @@ public class PlayerMovementTD : MonoBehaviour
   private Vector2 moveInput;
   private float moveY;
   private float moveX;
-  public SpriteRenderer spriteRenderer;
+  private SpriteRenderer spriteRenderer;
   private Animator animator;
 
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
     animator = GetComponent<Animator>();
+    spriteRenderer = GetComponent<SpriteRenderer>();
   }
 
 
@@ -50,6 +51,13 @@ public class PlayerMovementTD : MonoBehaviour
     if (moveY < 0 )
     {
         animator.SetBool("arriba", false);
+    }
+  }
+  void OnCollisionEnter2D(Collision2D coll)
+  {
+    if (coll.gameObject.CompareTag("rocas"))
+    {
+        Physics2D.IgnoreCollision(coll.collider, GetComponent<Collider2D>());
     }
   }
   void movimientoPersonaje()
