@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneManager_ : MonoBehaviour
 {
     private Transform pausa;
+    public AudioSource audioSource;
     void Start()
     {
         pausa = GameObject.Find("pausa").transform;
@@ -20,12 +21,14 @@ public class SceneManager_ : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             pausa.position = new Vector3(transform.position.x, transform.position.y, pausa.position.z);
+            audioSource.Pause();
             PauseGame();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             pausa.transform.position = new Vector3(0, -1000, 0);
+            audioSource.Play();
             ResumeGame();
         }
 
