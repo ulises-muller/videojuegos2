@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Tronquitos
   - rocas
+  - auto
+  - arboles
+  - pausa
   layers:
   - Default
   - TransparentFX
