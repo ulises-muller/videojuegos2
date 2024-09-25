@@ -38,19 +38,27 @@ public class PlayerMovementTD : MonoBehaviour
   {
     if (moveX > 0)
     {
-        spriteRenderer.flipX = true;
+        animator.SetBool("abajo", false);
+        spriteRenderer.flipX = false;
+        animator.SetBool("decostado", true);
     }
     if (moveX < 0)
     {
-        spriteRenderer.flipX = false;
+        animator.SetBool("abajo", false);
+        spriteRenderer.flipX = true;
+        animator.SetBool("decostado", true);
     }
     if (moveY > 0 )
     {
+        animator.SetBool("abajo", false);
+        animator.SetBool("decostado", false);
         animator.SetBool("arriba", true);
     }
     if (moveY < 0 )
     {
+        animator.SetBool("decostado", false);
         animator.SetBool("arriba", false);
+        animator.SetBool("abajo", true);
     }
   }
   void OnCollisionEnter2D(Collision2D coll)
@@ -69,6 +77,8 @@ public class PlayerMovementTD : MonoBehaviour
     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)){
         rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * moveInput);
     }
+    animator.SetFloat("floatX", Mathf.Abs(moveX));
+    animator.SetFloat("floatY", Mathf.Abs(moveY));
     MovimientoSprite();
   }
 }
