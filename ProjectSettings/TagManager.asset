@@ -9,6 +9,7 @@ TagManager:
   - auto
   - arboles
   - pausa
+  - boxarbol
   layers:
   - Default
   - TransparentFX

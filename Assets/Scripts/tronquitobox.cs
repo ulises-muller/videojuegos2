@@ -16,12 +16,12 @@ public class Tronquito : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Tronquitos") || collision.gameObject.CompareTag("auto") || collision.gameObject.CompareTag("arboles"))
+        if (collision.gameObject.CompareTag("boxarbol") || collision.gameObject.CompareTag("arboles"))
         {
-            Destroy(gameObject);
+            rb.transform.position = new Vector3(Random.Range(-160, 155), Random.Range(75, -56), 0);
         }
     }
-    // Update is called once per frame
+    // Update is called once per f  rame
     void Update()
     {
 
