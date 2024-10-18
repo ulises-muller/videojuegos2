@@ -22,6 +22,8 @@ public class EnemyAI : MonoBehaviour
 
 
             rb.transform.position = (Vector2)transform.position + (direction * speed * Time.deltaTime); // mueve al enemigo hacia el jugador
-        }
+        
     }
 }
+}
+

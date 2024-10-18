@@ -19671,6 +19671,7 @@ GameObject:
   - component: {fileID: 1011102626}
   - component: {fileID: 1011102625}
   - component: {fileID: 1011102628}
+  - component: {fileID: 1011102629}
   m_Layer: 0
   m_Name: Enemy_0
   m_TagString: Untagged
@@ -19819,8 +19820,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -19832,6 +19833,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1011102629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011102624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d77f88ac5307e47bac1c5b93f7dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pj: {fileID: 66603314}
+  speed: 2
 --- !u!1 &1013787670
 GameObject:
   m_ObjectHideFlags: 0
@@ -25444,6 +25459,7 @@ GameObject:
   - component: {fileID: 1243265862}
   - component: {fileID: 1243265861}
   - component: {fileID: 1243265864}
+  - component: {fileID: 1243265865}
   m_Layer: 0
   m_Name: Enemy_0 (1)
   m_TagString: Untagged
@@ -25605,6 +25621,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1243265865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243265860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d77f88ac5307e47bac1c5b93f7dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pj: {fileID: 66603314}
+  speed: 2
 --- !u!1 &1243315758
 GameObject:
   m_ObjectHideFlags: 0
@@ -25785,6 +25815,7 @@ GameObject:
   - component: {fileID: 1249195068}
   - component: {fileID: 1249195067}
   - component: {fileID: 1249195070}
+  - component: {fileID: 1249195071}
   m_Layer: 0
   m_Name: Enemy_0 (2)
   m_TagString: Untagged
@@ -25914,7 +25945,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.7, y: 14.5, z: 2.20484}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2009248703}
@@ -25946,6 +25977,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1249195071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249195066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d77f88ac5307e47bac1c5b93f7dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pj: {fileID: 66603314}
+  speed: 2
 --- !u!1 &1250008822
 GameObject:
   m_ObjectHideFlags: 0
@@ -29372,8 +29417,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -39694,6 +39739,7 @@ GameObject:
   - component: {fileID: 1902930463}
   - component: {fileID: 1902930462}
   - component: {fileID: 1902930465}
+  - component: {fileID: 1902930466}
   m_Layer: 0
   m_Name: Enemy_0 (3)
   m_TagString: Untagged
@@ -39855,6 +39901,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1902930466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902930461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d77f88ac5307e47bac1c5b93f7dc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pj: {fileID: 66603314}
+  speed: 2
 --- !u!1 &1914177018
 GameObject:
   m_ObjectHideFlags: 0
