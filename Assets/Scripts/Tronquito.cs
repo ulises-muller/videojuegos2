@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Tronco : MonoBehaviour
+public class Tronquito : MonoBehaviour
 {
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -16,12 +16,12 @@ public class Tronco : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("boxarbol") || collision.gameObject.CompareTag("arboles"))
+        if (collision.gameObject.CompareTag("Tronquitos") || collision.gameObject.CompareTag("auto") || collision.gameObject.CompareTag("arboles"))
         {
-            rb.transform.position = new Vector3(Random.Range(-160, 155), Random.Range(75, -56), 0);
+            Destroy(gameObject);
         }
     }
-    // Update is called once per f  rame
+    // Update is called once per frame
     void Update()
     {
 
