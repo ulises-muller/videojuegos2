@@ -10,6 +10,7 @@ TagManager:
   - arboles
   - pausa
   - boxarbol
+  - Enemys
   layers:
   - Default
   - TransparentFX

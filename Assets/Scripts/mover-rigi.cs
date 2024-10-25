@@ -10,6 +10,7 @@ public class PlayerMovementTD : MonoBehaviour
   public float speed = 3f;
   private Rigidbody2D rb;
   private Vector2 moveInput;
+  public bool dano = false;
   private float moveY;
   private float moveX;
   private SpriteRenderer spriteRenderer;
@@ -30,7 +31,9 @@ public class PlayerMovementTD : MonoBehaviour
   {
     movimientoPersonaje();
   }
-  
+  void danoTomado(bool dono){
+    dano = dono;
+  }
   void MovimientoSprite()
   {
     if (moveX > 0)
@@ -48,6 +51,7 @@ public class PlayerMovementTD : MonoBehaviour
     {
         Physics2D.IgnoreCollision(coll.collider, GetComponent<Collider2D>());
     }
+
   }
   void movimientoPersonaje()
   {

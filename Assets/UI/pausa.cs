@@ -8,14 +8,18 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pauseMenu;
-   
+       public AudioSource audioSource;
     private bool isPaused = false; // Booleano para pausar y reanudar con un botón
-
+    void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            
             if (isPaused)
             {
                 Resume();
@@ -32,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
+        audioSource.Pause();
         isPaused = true;
     }
 
@@ -40,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
+        audioSource.Play();
         isPaused = false;
     }
 
