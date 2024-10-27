@@ -10,7 +10,7 @@ public class vidaJugador : MonoBehaviour
     [SerializeField] private barraDeVida barraDeVida;
     [SerializeField] private float tiempoInvencibilidad = 2f; // Duración de la invencibilidad en segundos
     public SpriteRenderer spriteRenderer;
-    private Collider2D enemy;
+    private Collider2D playerCollider;
 
 
     private void Start()
@@ -18,7 +18,8 @@ public class vidaJugador : MonoBehaviour
         vida = maximoVida;
         barraDeVida.Instance.inicializarBarraDeVida(vida);
         spriteRenderer = GetComponent<SpriteRenderer>();
-        enemy = GameObject.FindWithTag("Enemys").GetComponent<Collider2D>();
+        playerCollider = GetComponent<Collider2D>();
+
     }
 
     public void tomarDano(float dano)
@@ -32,7 +33,7 @@ public class vidaJugador : MonoBehaviour
             }
             invensible = true;
             spriteRenderer.color = new Color(1, 1, 1, 0.5f);
-            Physics2D.IgnoreCollision(enemy, GetComponent<Collider2D>());
+            playerCollider.enabled = false;
             StartCoroutine(TemporizadorInvencibilidad());
         }
     }
@@ -42,6 +43,7 @@ public class vidaJugador : MonoBehaviour
         yield return new WaitForSeconds(tiempoInvencibilidad);
         spriteRenderer.color = new Color(1, 1, 1, 1);
         invensible = false;
+        playerCollider.enabled = true;
     }
 
 }
