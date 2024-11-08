@@ -70,5 +70,7 @@ public class ia_prueba : MonoBehaviour
         // Aquí puedes agregar lo que deba suceder cuando el enemigo muere
         Destroy(gameObject);
     }
+
+
 }
 
