@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float projectileSpeed = 10f;
     [SerializeField] private float damage = 20f;  // Cantidad de daño que hace el proyectil
     private Rigidbody2D projectileRb;
 
     void Start()
     {
         projectileRb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, 1f);
     }
 
     void Update()

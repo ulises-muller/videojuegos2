@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform pj;
+    private Transform pj;
     public float speed = 2f;  // velocidad del enemigo
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pj = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Update()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ia_prueba : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform player;
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float _distance;
     [SerializeField] private float stopDistance;
@@ -14,6 +14,10 @@ public class ia_prueba : MonoBehaviour
     [Header("Enemy Health")]
     public float health = 100f;  // Salud del enemigo
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
@@ -36,12 +40,6 @@ public class ia_prueba : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             flee = true;
-        }
-
-        // Si el enemigo colisiona con objetos con los tags "rocas" o "boxarbol", ignorar la colisión
-        if (other.gameObject.CompareTag("rocas") || other.gameObject.CompareTag("boxarbol"))
-        {
-            Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
         }
 
         // Si el enemigo colisiona con un proyectil, recibe daño
