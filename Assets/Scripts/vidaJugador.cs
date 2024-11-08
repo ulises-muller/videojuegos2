@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class vidaJugador : MonoBehaviour
 {
@@ -30,6 +32,7 @@ public class vidaJugador : MonoBehaviour
             if (vida <= 0)
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene(0);
             }
             invensible = true;
             spriteRenderer.color = new Color(1, 1, 1, 0.5f);
