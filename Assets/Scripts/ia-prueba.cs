@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ia_prueba : MonoBehaviour
 {
     [SerializeField] private Transform player;
@@ -12,12 +11,13 @@ public class ia_prueba : MonoBehaviour
     [SerializeField] private float returnDistance;
     private bool flee = false;
 
+    [Header("Enemy Health")]
+    public float health = 100f;  // Salud del enemigo
 
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
         if (distance > _distance || distance <= stopDistance) return;
-
 
         if (!flee)
         {
@@ -32,13 +32,45 @@ public class ia_prueba : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Player")
+        // Si el enemigo colisiona con el jugador, empieza a huir
+        if (other.gameObject.CompareTag("Player"))
         {
             flee = true;
         }
-            if (other.gameObject.CompareTag("rocas") || other.gameObject.CompareTag("boxarbol"))
+
+        // Si el enemigo colisiona con objetos con los tags "rocas" o "boxarbol", ignorar la colisión
+        if (other.gameObject.CompareTag("rocas") || other.gameObject.CompareTag("boxarbol"))
         {
             Physics2D.IgnoreCollision(other.collider, GetComponent<Collider2D>());
         }
+
+        // Si el enemigo colisiona con un proyectil, recibe daño
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            Projectile projectile = other.gameObject.GetComponent<Projectile>();
+            if (projectile != null)
+            {
+                TakeDamage(projectile.GetDamage());  // Llamamos al método TakeDamage del enemigo
+                Destroy(other.gameObject);  // Destruimos el proyectil después de colisionar
+            }
+        }
+    }
+
+    // Método para aplicar daño al enemigo
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    // Método para manejar la muerte del enemigo
+    void Die()
+    {
+        // Aquí puedes agregar lo que deba suceder cuando el enemigo muere
+        Destroy(gameObject);
     }
 }
+

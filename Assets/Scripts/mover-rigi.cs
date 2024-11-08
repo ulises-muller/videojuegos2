@@ -1,63 +1,82 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
 
 public class PlayerMovementTD : MonoBehaviour
 {
-  public float speed = 3f;
-  private Rigidbody2D rb;
-  private Vector2 moveInput;
-  public bool dano = false;
-  private float moveY;
-  private float moveX;
-  private SpriteRenderer spriteRenderer;
-  void Start()
-  {
-    rb = GetComponent<Rigidbody2D>();
-    spriteRenderer = GetComponent<SpriteRenderer>();
-  }
+    public float speed = 3f;
+    private Rigidbody2D rb;
+    private Vector2 moveInput;
+    private float moveY;
+    private float moveX;
+    private SpriteRenderer spriteRenderer;
+    public bool facingRight = true; // Dirección del personaje
 
+    [Header("Shooting Settings")]
+    [SerializeField] private GameObject projectilePrefab;  // Prefab del proyectil
+    [SerializeField] private float projectileSpeed = 10f;  // Velocidad del proyectil
 
-  void Update()
-  {
-    moveX = Input.GetAxis("Horizontal");
-    moveY = Input.GetAxis("Vertical");
-    moveInput = new Vector2(moveX, moveY).normalized;
-  }
-  void FixedUpdate()
-  {
-    movimientoPersonaje();
-  }
-  void danoTomado(bool dono){
-    dano = dono;
-  }
-  void MovimientoSprite()
-  {
-    if (moveX > 0)
+    void Start()
     {
-        spriteRenderer.flipX = false;
-    }
-    if (moveX < 0)
-    {
-        spriteRenderer.flipX = true;
-    }
-  }
-  void OnCollisionEnter2D(Collision2D coll)
-  {
-    if (coll.gameObject.CompareTag("rocas") || coll.gameObject.CompareTag("boxarbol"))
-    {
-        Physics2D.IgnoreCollision(coll.collider, GetComponent<Collider2D>());
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-  }
-  void movimientoPersonaje()
-  {
-    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)){
-        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * moveInput);
+    void Update()
+    {
+        // Movimiento
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
+        moveInput = new Vector2(moveX, moveY).normalized;
+
+        // Disparo al presionar clic izquierdo del mouse
+        if (Input.GetMouseButtonDown(0))
+        {
+            ShootTowardsMouse();
+        }
     }
-    MovimientoSprite();
-  }
+
+    void FixedUpdate()
+    {
+        movimientoPersonaje();
+    }
+
+    void MovimientoSprite()
+    {
+        if (moveX > 0)
+        {
+            spriteRenderer.flipX = false;
+            facingRight = true;
+        }
+        else if (moveX < 0)
+        {
+            spriteRenderer.flipX = true;
+            facingRight = false;
+        }
+    }
+
+    void movimientoPersonaje()
+    {
+        if (moveInput != Vector2.zero)
+        {
+            rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * moveInput);
+        }
+        MovimientoSprite();
+    }
+
+    void ShootTowardsMouse()
+    {
+        // Obtener la posición del mouse en el mundo
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Calcular la dirección desde el jugador hacia el mouse
+        Vector2 shootingDirection = (mousePosition - (Vector2)transform.position).normalized;
+
+        // Instanciar el proyectil en la posición del jugador
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
+        // Asignar velocidad al proyectil en la dirección del mouse
+        Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
+        rbProjectile.velocity = shootingDirection * projectileSpeed;
+    }
 }

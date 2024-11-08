@@ -11,6 +11,7 @@ TagManager:
   - pausa
   - boxarbol
   - Enemys
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Enemys
   - Water
   - UI
-  - 
-  - 
+  - Proyectile
+  - Player
   - 
   - 
   - 
