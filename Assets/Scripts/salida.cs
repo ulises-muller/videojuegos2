@@ -34,7 +34,7 @@ public class salida : MonoBehaviour
         }
         else
         {
-            Debug.Log("No hay más niveles para cargar.");
+            SceneManager.LoadScene(0);
         }
     }
 }
