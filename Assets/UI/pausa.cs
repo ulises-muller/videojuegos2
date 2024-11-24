@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pauseMenu;
-       public AudioSource audioSource;
+    [SerializeField] private GameObject Tuto;
+    public AudioSource audioSource;
     private bool isPaused = false; // Booleano para pausar y reanudar con un botón
     void Start()
         {
-            audioSource = GetComponent<AudioSource>();
+            audioSource.Pause();
+            Time.timeScale = 0f;
         }
 
     private void Update()
@@ -30,7 +31,11 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-
+    public void Tutorial()
+    {
+        Tuto.SetActive(false);
+        Resume();
+    }
     public void Pause()
     {
         Time.timeScale = 0f;
