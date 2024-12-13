@@ -14,13 +14,23 @@ public class ia_prueba : MonoBehaviour
     [Header("Enemy Health")]
     public float health = 100f;  // Salud del enemigo
 
+    [Header("Special Attack Settings")]
+    [SerializeField] private float specialAttackRange = 5f; // Rango del ataque especial
+    [SerializeField] private float specialAttackCooldown = 10f; // Tiempo entre ataques especiales
+    [SerializeField] private int specialAttackDamage = 3; // Daño del ataque especial
+    private float specialAttackTimer; // Temporizador para el ataque especial
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        specialAttackTimer = specialAttackCooldown; // Iniciar el temporizador
     }
+
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
+
+        // Movimiento hacia el jugador si está dentro del rango pero fuera del alcance de "detenerse"
         if (distance > _distance || distance <= stopDistance) return;
 
         if (!flee)
@@ -31,6 +41,29 @@ public class ia_prueba : MonoBehaviour
         {
             if (distance > returnDistance) flee = false;
             transform.position = Vector2.MoveTowards(transform.position, player.position, -1 * chaseSpeed * Time.deltaTime);
+        }
+
+        // Manejo del temporizador y ejecución del ataque especial
+        HandleSpecialAttack(distance);
+    }
+
+    private void HandleSpecialAttack(float distance)
+    {
+        specialAttackTimer -= Time.deltaTime;
+
+        if (specialAttackTimer <= 0 && distance <= specialAttackRange)
+        {
+            // Ejecutar el ataque especial
+            Debug.Log("El jefe realiza un ataque especial!");
+
+            // Si el jugador está en rango, aplicamos daño
+            if (distance <= specialAttackRange)
+            {
+                player.GetComponent<vidaJugador>().tomarDano(specialAttackDamage);
+            }
+
+            // Reiniciar el temporizador
+            specialAttackTimer = specialAttackCooldown;
         }
     }
 
@@ -70,7 +103,5 @@ public class ia_prueba : MonoBehaviour
         // Aquí puedes agregar lo que deba suceder cuando el enemigo muere
         Destroy(gameObject);
     }
-
-
 }
 

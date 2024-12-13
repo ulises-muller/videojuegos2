@@ -180,6 +180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6106394931689268116}
+  - component: {fileID: -2837722522516856613}
   m_Layer: 0
   m_Name: escape
   m_TagString: Untagged
@@ -203,3 +204,21 @@ Transform:
   - {fileID: 1293314362195271206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2837722522516856613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777471115684057572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475d8a6b8fac7ee45bac3c8f0ef6e4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7066023857609702412, guid: 282c48c21e8a1d74c928659d03db5675, type: 3}
+  player: {fileID: 0}
+  fireRate: 0.3
+  projectileSpeed: 20
+  attackDuration: 60
+  offsetY: 1.13

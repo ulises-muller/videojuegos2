@@ -192,10 +192,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed: 3
-  _distance: 100
+  _distance: 40
   stopDistance: 0
   returnDistance: 2
   health: 1000
+  specialAttackRange: 5
+  specialAttackCooldown: 10
+  specialAttackDamage: 3
 --- !u!114 &8259664918926853090
 MonoBehaviour:
   m_ObjectHideFlags: 0
