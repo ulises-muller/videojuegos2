@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2239251342861463337}
   - component: {fileID: 5629500789987028852}
   - component: {fileID: 7294664548293872363}
+  - component: {fileID: -7447038562267843200}
   m_Layer: 3
   m_Name: Enemy_0 (1)
   m_TagString: Untagged
@@ -194,6 +195,9 @@ MonoBehaviour:
   stopDistance: 2
   returnDistance: 2
   health: 30
+  specialAttackRange: 5
+  specialAttackCooldown: 10
+  specialAttackDamage: 3
 --- !u!114 &2239251342861463337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +236,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &-7447038562267843200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4174961841758872307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cebfa01de87e34e92becfb1b30c80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 10

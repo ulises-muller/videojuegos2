@@ -8,11 +8,8 @@ public class AddPoints : MonoBehaviour
     public int pointsToAdd;
 
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnDestroy()
     {
-        if(other.CompareTag("Player"))
-        {
-            pointSystem.Instance.addPoints(pointsToAdd);
-        }
+        pointSystem.Instance.addPoints(pointsToAdd);
     }
 }

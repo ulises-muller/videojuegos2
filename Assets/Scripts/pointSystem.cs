@@ -2,16 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class pointSystem : MonoBehaviour
 {
     public static pointSystem Instance;
     public TextMeshProUGUI textPoints;
-    private int points = 20;
+    private int points = 0;
+    private int curarse = 100;
+    private vidaJugador playerVida;
+
+    private void Start() {
+        playerVida = FindObjectOfType<vidaJugador>();
+    }
     public void addPoints(int quantity)
     {
         points += quantity;
         updateUi();
+
+        if (points >= curarse) {
+            curarse += 100;
+            playerVida.curarVida(1);
+        }
     }
 
     public void subPoints(int quantity)

@@ -10865,6 +10865,7 @@ GameObject:
   - component: {fileID: 1217668460}
   - component: {fileID: 1217668459}
   - component: {fileID: 1217668458}
+  - component: {fileID: 1217668461}
   m_Layer: 0
   m_Name: Arma2
   m_TagString: Arma
@@ -10882,7 +10883,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 135.6, y: 50.6, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 27016172}
@@ -11002,6 +11003,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1217668461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217668456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cebfa01de87e34e92becfb1b30c80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 100
 --- !u!1 &1219783701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11638,6 +11652,7 @@ GameObject:
   - component: {fileID: 1310046636}
   - component: {fileID: 1310046635}
   - component: {fileID: 1310046634}
+  - component: {fileID: 1310046637}
   m_Layer: 0
   m_Name: Arma3
   m_TagString: Arma
@@ -11655,7 +11670,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -144.03, y: 38.2, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 644080614}
@@ -11775,6 +11790,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1310046637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310046632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cebfa01de87e34e92becfb1b30c80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 100
 --- !u!1 &1314603043
 GameObject:
   m_ObjectHideFlags: 0
@@ -27955,8 +27983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a7427ddbef80a4eb596b97bd3f82fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseButton: {fileID: 0}
   pauseMenu: {fileID: 775649843}
+  Tuto: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!114 &1655624418
 MonoBehaviour:
@@ -28318,6 +28346,7 @@ GameObject:
   - component: {fileID: 1699358021}
   - component: {fileID: 1699358020}
   - component: {fileID: 1699358019}
+  - component: {fileID: 1699358022}
   m_Layer: 0
   m_Name: Arma
   m_TagString: Arma
@@ -28335,7 +28364,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -128.8, y: -60, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 874199544}
@@ -28455,6 +28484,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1699358022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699358017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cebfa01de87e34e92becfb1b30c80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 100
 --- !u!1 &1709466585
 GameObject:
   m_ObjectHideFlags: 0

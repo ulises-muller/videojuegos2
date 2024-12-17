@@ -40,6 +40,17 @@ public class vidaJugador : MonoBehaviour
         }
     }
 
+    // Metodo para curar vida
+
+    public void curarVida(float cantidad) {
+        vida += cantidad;
+        if (vida > maximoVida) {
+            vida =  maximoVida;
+        }
+        barraDeVida.Instance.cambiarVidaActual(vida);
+    }
+
+
     // Invencibilidad temporal después de recibir daño
     private IEnumerator TemporizadorInvencibilidad()
     {

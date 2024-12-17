@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8863624674994821413}
   - component: {fileID: 6695892022991512893}
   - component: {fileID: 1928971301368249530}
+  - component: {fileID: -245140187140841610}
   m_Layer: 3
   m_Name: Boss
   m_TagString: Untagged
@@ -256,6 +257,19 @@ MonoBehaviour:
   jugador: {fileID: 0}
   intervaloDeSpawn: 3
   distanciaDeSpawn: 25
+--- !u!114 &-245140187140841610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346996238491408112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cebfa01de87e34e92becfb1b30c80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 100
 --- !u!1 &8714240499564519577
 GameObject:
   m_ObjectHideFlags: 0
