@@ -25,20 +25,17 @@ public class Projectile : MonoBehaviour
     }
 
     // Método para detectar colisiones (Usando Trigger si se requiere)
-    private void OnTriggerEnter2D(Collider2D other)
+   private void OnTriggerEnter2D(Collider2D other)
+{
+    // Verifica si el proyectil colide con el enemigo
+    if (other.gameObject.CompareTag("Enemy"))
     {
-        // Verifica si el proyectil colide con el jugador
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<vidaJugador>().tomarDano(damage); // Aplica el daño al jugador
-            Destroy(gameObject); // Destruye el proyectil después de causar daño
-        }
-        // Si el proyectil toca cualquier otro objeto que no sea el jugador, se destruye
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject); // Destruye el proyectil si toca un enemigo
-        }
+        // Aplica daño al enemigo
+        other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+        Destroy(gameObject); // Destruye el proyectil después de causar daño
     }
+    // Si el proyectil toca cualquier otro objeto, no hace nada
+}
 }
 
 

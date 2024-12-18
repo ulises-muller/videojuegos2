@@ -13,6 +13,7 @@ TagManager:
   - Enemys
   - Projectile
   - Arma
+  - ProjectileParaJugador
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Proyectile
   - Player
   - boxs
-  - 
+  - ProjectileParaJugador
   - 
   - 
   - 

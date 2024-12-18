@@ -161,7 +161,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8346996238491408112}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -197,9 +197,6 @@ MonoBehaviour:
   stopDistance: 0
   returnDistance: 2
   health: 1000
-  specialAttackRange: 5
-  specialAttackCooldown: 10
-  specialAttackDamage: 3
 --- !u!114 &8259664918926853090
 MonoBehaviour:
   m_ObjectHideFlags: 0

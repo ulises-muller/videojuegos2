@@ -216,9 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475d8a6b8fac7ee45bac3c8f0ef6e4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 7066023857609702412, guid: 282c48c21e8a1d74c928659d03db5675, type: 3}
-  player: {fileID: 0}
+  projectileForPlayer: {fileID: 7066023857609702412, guid: 75ce85bebc5e4934c8ee042c8e2ef66f, type: 3}
   fireRate: 0.3
   projectileSpeed: 20
-  attackDuration: 60
   offsetY: 1.13
