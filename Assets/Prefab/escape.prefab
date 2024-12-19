@@ -181,9 +181,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6106394931689268116}
   - component: {fileID: -2837722522516856613}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: escape
-  m_TagString: Untagged
+  m_TagString: ProjectileParaJugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,5 +218,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileForPlayer: {fileID: 7066023857609702412, guid: 75ce85bebc5e4934c8ee042c8e2ef66f, type: 3}
   fireRate: 0.3
-  projectileSpeed: 20
-  offsetY: 1.13
+  projectileSpeed: 30

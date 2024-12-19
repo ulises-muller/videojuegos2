@@ -2,29 +2,32 @@ using UnityEngine;
 
 public class ProjectileForPlayer : MonoBehaviour
 {
-    [SerializeField] private float damage = 5f; // Daño del proyectil
-    private Rigidbody2D rb;
+    [SerializeField] private float damage = 20f;  // Cantidad de daño que hace el proyectil
+    private Rigidbody2D projectileRb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 2f); // El proyectil se destruye después de 2 segundos
+        projectileRb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, 1f); // El proyectil se destruye después de 1 segundo para evitar que se quede en la escena
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // Método para detectar colisiones
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        // Verifica si el proyectil toca al jugador
-        if (other.CompareTag("Player"))
+        // Verifica si el proyectil colisiona con el jugador
+        if (other.gameObject.CompareTag("Player"))
         {
-            // Si colisiona con el jugador, se aplica el daño
-            other.GetComponent<vidaJugador>()?.tomarDano(damage);
+            // Aplica daño al jugador
+            var playerHealth = other.gameObject.GetComponent<vidaJugador>();
+            if (playerHealth != null)
+            {
+                playerHealth.tomarDano(damage);
+            }
             Destroy(gameObject); // Destruye el proyectil después de causar daño
-        }
-        // Si colide con otro enemigo, no hace nada
-        else if (other.CompareTag("Enemy"))
-        {
-            
-            Destroy(gameObject); // Destruye el proyectil si toca un enemigo
         }
     }
 }
+
+
+
+

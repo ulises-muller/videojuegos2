@@ -39,7 +39,7 @@ public class PortalAttack : MonoBehaviour
     {
         if (projectileForPlayer == null) return;
 
-        // Instanciar el proyectil en la posición del enemigo (sin el offset Y)
+        
         Vector3 spawnPosition = transform.position;
         GameObject projectile = Instantiate(projectileForPlayer, spawnPosition, Quaternion.identity);
 
