@@ -14,6 +14,12 @@ public class movercamara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        if (player != null) 
+        { 
+            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); 
+        } 
+        else { 
+            Debug.LogWarning("Player transform is missing or destroyed!");
+        }
     }
 }

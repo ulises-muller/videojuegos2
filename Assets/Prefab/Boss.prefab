@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 6695892022991512893}
   - component: {fileID: 1928971301368249530}
   - component: {fileID: -245140187140841610}
+  - component: {fileID: 2719157898405052374}
   m_Layer: 3
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,6 +268,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 100
+--- !u!114 &2719157898405052374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346996238491408112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475d8a6b8fac7ee45bac3c8f0ef6e4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileForPlayer: {fileID: 7066023857609702412, guid: 75ce85bebc5e4934c8ee042c8e2ef66f, type: 3}
+  fireRate: 0.3
+  projectileSpeed: 30
 --- !u!1 &8714240499564519577
 GameObject:
   m_ObjectHideFlags: 0

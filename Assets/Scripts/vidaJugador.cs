@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class vidaJugador : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class vidaJugador : MonoBehaviour
     [SerializeField] private bool invensible;
     [SerializeField] private barraDeVida barraDeVida;
     [SerializeField] private float tiempoInvencibilidad = 2f; // Duración de la invencibilidad en segundos
+    public event EventHandler MuerteJugador;
     public SpriteRenderer spriteRenderer;
     private Collider2D playerCollider;
 
@@ -30,8 +32,8 @@ public class vidaJugador : MonoBehaviour
             barraDeVida.Instance.cambiarVidaActual(vida);
             if (vida <= 0)
             {
+                MuerteJugador?.Invoke(this, EventArgs.Empty);
                 Destroy(gameObject);
-                SceneManager.LoadScene(0);  // Muestra la escena de game over
             }
             invensible = true;
             spriteRenderer.color = new Color(1, 1, 1, 0.5f); // El jugador se vuelve semi-transparente

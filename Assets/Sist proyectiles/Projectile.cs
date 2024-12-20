@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D other)
 {
     // Verifica si el proyectil colide con el enemigo
-    if (other.gameObject.CompareTag("Enemy"))
+    if (other.gameObject.CompareTag("Enemys"))
     {
         // Aplica daño al enemigo
         other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
